@@ -1,16 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DataListFragment">
+    android:orientation="vertical"
+    tools:context=".fragments.DataListFragment">
+
+    <Button
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:text="@string/logout"
+        android:id="@+id/logout"
+        android:layout_width="0dp"
+        android:layout_height="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/welcome_msg">
+
+    </Button>
+    <TextView
+        android:textSize="22sp"
+        android:id="@+id/welcome_msg"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logout"
+        app:layout_constraintBottom_toTopOf="@+id/tvSearch"
+        />
+    <EditText
+        android:hint="@string/search"
+        android:id="@+id/tvSearch"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/welcome_msg"
+        app:layout_constraintBottom_toTopOf="@+id/recycler_view"
+    />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/data_item"
-        tools:itemCount="5"/>
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSearch"
+        tools:itemCount="5"
+        tools:listitem="@layout/data_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>

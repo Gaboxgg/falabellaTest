@@ -1,8 +1,18 @@
 <resources>
     <string name="app_name">FalabellaTest</string>
-    <string name="login_progress_signing_in">Loging in</string>
-    <string name="username">Username</string>
-    <string name="password">Password</string>
-    <string name="login">Login</string>
-    <string name="wrong_access">The credentials are wrong</string>
+    <string name="login_progress_signing_in">Entrando</string>
+    <string name="username">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="login">Entrar</string>
+    <string name="wrong_access">Credenciales incorrectas</string>
+    <string name="baseUrl">https://www.mindicador.cl/</string>
+    <string name="value_text">Valor: </string>
+    <string name="date_text">Fecha: </string>
+    <string name="unit_text">Unidad Medida: </string>
+    <string name="name_text">Nombre: </string>
+    <string name="code_text">Código: </string>
+    <string name="logout">Salir</string>
+    <string name="confirmation">Confirmación de acción</string>
+    <string name="confirmation_text">Confirme la acción a realizar</string>
+    <string name="search">Buscar</string>
 </resources>

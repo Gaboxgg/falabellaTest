@@ -1,10 +1,11 @@
-package com.example.falabellatest
+package com.example.falabellatest.data
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.example.falabellatest.interfaces.DataDao
 
 @Database(entities = [Data::class], version = 1)
 abstract class DataDatabase : RoomDatabase() {

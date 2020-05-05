@@ -1,8 +1,9 @@
-package com.example.falabellatest
+package com.example.falabellatest.data
 
 import android.app.Application
 import android.os.AsyncTask
 import androidx.lifecycle.LiveData
+import com.example.falabellatest.interfaces.DataDao
 
 class DataRepository(application: Application) {
 
@@ -11,7 +12,7 @@ class DataRepository(application: Application) {
     private var allData: LiveData<List<Data>>
 
     init {
-        val database: DataDatabase  = DataDatabase.DatabaseProvider.getDataBase(
+        val database: DataDatabase = DataDatabase.DatabaseProvider.getDataBase(
             application.applicationContext
         )!!
         dataDao = database.dataDao()
@@ -19,7 +20,9 @@ class DataRepository(application: Application) {
     }
 
     fun insert(data: Data) {
-        val insertNoteAsyncTask = InsertNoteAsyncTask(dataDao).execute(data)
+        val insertNoteAsyncTask = InsertNoteAsyncTask(
+            dataDao
+        ).execute(data)
     }
 
     fun deleteAllData() {
@@ -28,7 +31,15 @@ class DataRepository(application: Application) {
         ).execute()
     }
 
-    fun getAllNotes(): LiveData<List<Data>> {
+    fun getDataByCode(code:String): Data {
+        return dataDao.getDataByCode(code)
+    }
+
+    fun getDataByFilter(filter:String):LiveData<List<Data>> {
+        return dataDao.getDataByFilter(filter)
+    }
+
+    fun getAllData(): LiveData<List<Data>> {
         return allData
     }
 
