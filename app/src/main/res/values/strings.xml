@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FalabellaTest</string>
+    <string name="login_progress_signing_in">Loging in</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="wrong_access">The credentials are wrong</string>
+</resources>
