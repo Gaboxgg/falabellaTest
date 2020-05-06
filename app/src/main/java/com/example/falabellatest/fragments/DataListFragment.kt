@@ -96,7 +96,7 @@ class DataListFragment : Fragment() {
         searchData()
     }
 
-    private fun searchData() {
+     fun searchData() {
         doAsync {
             try {
                 val call: Response<DataPojo> = getRetrofit().create(APIService::class.java).getData().execute()
